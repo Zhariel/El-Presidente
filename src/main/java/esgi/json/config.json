@@ -1,0 +1,50 @@
+[
+  {
+    "name": "sandbox",
+      "factions": [
+        {
+          "name": "capitalists",
+          "satisfaction": 50,
+          "partisans": 15
+        },
+        {
+          "name": "communists",
+          "satisfaction": 50,
+          "partisans": 15
+        },
+        {
+          "name": "liberals",
+          "satisfaction": 50,
+          "partisans": 15
+        },
+        {
+          "name": "religious",
+          "satisfaction": 50,
+          "partisans": 15
+        },
+        {
+          "name": "militarists",
+          "satisfaction": 50,
+          "partisans": 15
+        },
+        {
+          "name": "ecologists",
+          "satisfaction": 50,
+          "partisans": 15
+        },
+        {
+          "name": "nationalists",
+          "satisfaction": 50,
+          "partisans": 15
+        },
+        {
+          "name": "loyalists",
+          "satisfaction": 100,
+          "partisans": 15
+        }
+      ],
+      "industry": 15,
+      "agriculture": 15,
+      "treasury": 2000
+  }
+]

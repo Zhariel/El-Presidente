@@ -1,0 +1,526 @@
+[
+  {
+    "name": "autumn",
+    "events": [
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      },
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "winter",
+    "events": [
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      },
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "spring",
+    "events": [
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      },
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "summer",
+    "events": [
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      },
+      {
+        "narrative": "",
+        "choices": {
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          },
+          "option ": {
+            "decision": "",
+            "consequence": "",
+            "impact": {
+              "factions": {
+              },
+              "treasury": 0,
+              "food": 0
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "misc",
+    "events": [
+      {
+        "narrative": "Les hommes crabes vous déclarent la guerre!",
+        "choices": [
+          {
+          "option 1": {
+            "decision": "Se soumettre aux hommes crabes.",
+            "consequence": "Vous vous soumettez aux hommes crabes.",
+            "impact": {
+              "factions":[
+                {
+                  "name": "militarists",
+                  "effect":-20
+                },{
+                  "name": "ecologists",
+                  "effect":15
+                },{
+                  "name": "nationalists",
+                  "effect":-10
+                }
+              ],
+              "treasury": 0,
+              "food": 0
+            }
+          }
+          },
+          {
+            "option 2": {
+              "decision": "Déclarer la guerre aux hommes crabes.",
+              "consequence": "Vous attaquez les hommes crabes avec toute votre force de frappe. Ils sont repoussés!",
+              "impact": {
+                "factions": [{
+                  "name": "militarists",
+                  "effect":15
+                },{
+                  "name": "ecologists",
+                  "effect":-10
+                },{
+                  "name": "nationalists",
+                  "effect":10
+                }
+                ],
+                "treasury": 0,
+                "food": 10
+              }
+            }
+          },
+          {
+            "option 3": {
+              "decision": "Trouver un compromis et se serrer la pince.",
+              "consequence": "Les hommes crabes entendent vos arguments, mais n'acceptent de s'en aller que si vous les payez grassement.",
+              "impact": {
+                "factions": [{
+                  "name": "capitalists",
+                  "effect":-10
+                },{
+                  "name": "nationalists",
+                  "effect":10
+                }
+                ],
+                "treasury": -200,
+                "food": 0
+              }
+            }
+          },
+          {
+            "option 4": {
+              "decision": "Tuer la délégation et essayer de savoir si les hommes crabes sont comestibles.",
+              "consequence": "Les hommes crabes sont intimidés par vos actions et abandonnent leurs ambitions de conquête.",
+              "impact": {
+                "factions": [{
+                  "name": "militarists",
+                  "effect":20
+                },{
+                  "name": "nationalists",
+                  "effect":15
+                },{
+                  "name": "ecologists",
+                  "effect":-20
+                }
+                ],
+                "treasury": 0,
+                "food": 100
+              }
+            }
+          }]
+      },
+      {
+        "narrative": "",
+        "choices": [
+          {
+            "option ": {
+              "decision": "",
+              "consequence": "",
+              "impact": {
+                "factions": {
+                },
+                "treasury": 0,
+                "food": 0
+              }
+            }
+          },
+          {
+            "option ": {
+              "decision": "",
+              "consequence": "",
+              "impact": {
+                "factions": {
+                },
+                "treasury": 0,
+                "food": 0
+              }
+            }
+          },
+          {
+            "option ": {
+              "decision": "",
+              "consequence": "",
+              "impact": {
+                "factions": {
+                },
+                "treasury": 0,
+                "food": 0
+              }
+            }
+          },
+          {
+            "option ": {
+              "decision": "",
+              "consequence": "",
+              "impact": {
+                "factions": {
+                },
+                "treasury": 0,
+                "food": 0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
