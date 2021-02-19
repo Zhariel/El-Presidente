@@ -44,4 +44,31 @@ public class Resources {
     public void setAgriculture(int agriculture) {
         this.agriculture = agriculture;
     }
+    public boolean limitedField(int industry, int agriculture) {
+    	if(industry + agriculture > 100)
+    		return false;
+    	return true;
+    }
+    
+    public void addIndustry(int value) {
+    	int newIndustry = getIndustry() + value;
+    	if(limitedField(newIndustry , getAgriculture())) {
+    		setIndustry(newIndustry);
+    	}
+    	else {
+    		System.out.println("Vous avez atteint la limite de place disponible pour créer des usines industrielles. ");  		
+    	}
+    }
+   
+    public void addAgriculture(int value) {
+    	int newAgriculture = getAgriculture() + value;
+    	if(limitedField(newAgriculture ,getIndustry())) {
+    		setIndustry(newAgriculture);
+    	}
+    	else {
+    		System.out.println("Vous avez atteint la limite de place disponible pour créer des champs agricoles. ");  
+    	}
+    }
+    
+    
 }
