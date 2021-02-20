@@ -4,26 +4,30 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Option {
-    private String action;
+    private String decision;
     private String consequence;
-    public HashMap factionImpact;
+    private HashMap factionImpact;
     private int foodImpact;
     private int treasuryImpact;
+    private int industryImpact;
+    private int agricultureImpact;
 
-    public Option(String action, String consequence, int foodImpact, int treasuryImpact) {
-        this.action = action;
+    public Option(String decision, String consequence, int foodImpact, int treasuryImpact, int industryImpact, int agricultureImpact) {
+        this.decision = decision;
         this.consequence = consequence;
         this.factionImpact = new HashMap();
         this.foodImpact = foodImpact;
         this.treasuryImpact = treasuryImpact;
+        this.industryImpact = industryImpact;
+        this.agricultureImpact = agricultureImpact;
     }
 
-    public String getAction() {
-        return action;
+    public String getDecision() {
+        return decision;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setDecision(String decision) {
+        this.decision = decision;
     }
 
     public String getConsequence() {
@@ -32,6 +36,14 @@ public class Option {
 
     public void setConsequence(String consequence) {
         this.consequence = consequence;
+    }
+
+    public HashMap getFactionImpact() {
+        return factionImpact;
+    }
+
+    public void setFactionImpact(HashMap factionImpact) {
+        this.factionImpact = factionImpact;
     }
 
     public int getFoodImpact() {
@@ -48,5 +60,21 @@ public class Option {
 
     public void setTreasuryImpact(int treasuryImpact) {
         this.treasuryImpact = treasuryImpact;
+    }
+
+    public int getIndustryImpact() {
+        return industryImpact;
+    }
+
+    public void setIndustryImpact(int industryImpact) {
+        this.industryImpact = industryImpact;
+    }
+
+    public int getAgricultureImpact() {
+        return agricultureImpact;
+    }
+
+    public void setAgricultureImpact(int agricultureImpact) {
+        this.agricultureImpact = agricultureImpact;
     }
 }

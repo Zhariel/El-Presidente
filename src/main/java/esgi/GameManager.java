@@ -10,18 +10,20 @@ public class GameManager {
     private static GameManager instance = null;
     private static int seasonCount;
     private static String season;
-    public static HashMap seasonSymbol = new HashMap();
+    public static HashMap<String, String> seasonMap = new HashMap<String, String>();
 
-    private GameManager(){};
+    private GameManager() {
+    }
 
-    public static GameManager getInstance(){
-        if(instance == null){
+    public static GameManager getInstance() {
+        if (instance == null) {
             instance = new GameManager();
             seasonCount = 0;
-            seasonSymbol.put("automne", "\uD83C\uDF42");
-            seasonSymbol.put("hiver", "\u2744");
-            seasonSymbol.put("printemps", "\uD83C\uDF41");
-            seasonSymbol.put("été", "\u2600");
+            seasonMap.put("automne", "\uD83C\uDF42");
+            seasonMap.put("hiver", "\u2744");
+            seasonMap.put("printemps", "\uD83C\uDF41");
+            seasonMap.put("été", "\u2600");
+            seasonMap.put("misc", "");
         }
 
         return instance;
@@ -32,58 +34,46 @@ public class GameManager {
     }
 
     public void setSeasonCount(int seasonCount) {
-        this.seasonCount = seasonCount;
+        GameManager.seasonCount = seasonCount;
     }
 
-    public void updateSeason(){
-        season = seasonCount%4 == 0 ? "automne" :
-                (seasonCount%4 == 1 ? "hiver": (seasonCount%4 == 2 ? "printemps" : "été"));
+    public void updateSeason() {
+        season = seasonCount % 4 == 0 ? "automne" :
+                (seasonCount % 4 == 1 ? "hiver" : (seasonCount % 4 == 2 ? "printemps" : "été"));
     }
 
-    public void describeGameState(Resources resource, ArrayList<Faction> factions){
-
-        for(Faction f : factions){
-            System.out.print(f.getName());
-            System.out.print(" : [satisfaction : " + f.getSatisfaction() + "] ");
-            System.out.print(", [partisans : " + f.getPartisans() + "] ");
-            System.out.println();
-        }
-        System.out.println();
-
-        System.out.println("C'est l'an " + (seasonCount/4+1) + ", saison " + (seasonCount%4+1) + " de votre règne.");
-        System.out.println("Saison : " + season + " " + seasonSymbol.get(season));
-        System.out.println();
-
-    }
-
-    public void run() throws IOException{
+    public void run() throws IOException {
         System.out.println();
         updateSeason();
 
         GameInitializer initializer = new GameInitializer("sandbox");
         EventManager events = new EventManager();
+        Output out = new Output();
+        Scanner scan = new Scanner(System.in);
+        MenuAction menu = new MenuAction();
 
-        Resources r = initializer.initResources();
+        Resources resource = initializer.initResources();
         ArrayList<Faction> factions = initializer.initFactions();
+        ArrayList<Event> eventList = events.populateEventList(seasonMap);
+
+        //eventList.forEach(out::debugEvent);
+
 
         //Game loop
-        while(true){
-            describeGameState(r, factions);
-            System.out.println("Qu'allez-vous faire ?");
+        while (true) {
+            out.describeGameState(resource, factions, season, seasonMap, seasonCount);
 
-            events.diceRoll(season);
+            int chosenEvent = events.diceRoll(season);
+            if(events.applyChoice(chosenEvent, season, eventList, resource, factions)) {
+                out.describeGameState(resource, factions, season, seasonMap, seasonCount);
+            }
 
 
 
-
-
-//            Scanner s = new Scanner(System.in);
-//            String test = s.nextLine();
-//            System.out.println(test);
+            menu.endTurn(resource, factions);
 
             seasonCount++;
             updateSeason();
-            break;
         }
     }
 }

@@ -6,7 +6,7 @@ public class Event {
     private String season;
     private int index;
     private String narrative;
-    private ArrayList options;
+    public ArrayList options;
 
     public Event(String season, int index, String narrative, ArrayList options) {
         this.season = season;
@@ -45,5 +45,9 @@ public class Event {
 
     public void setOptions(ArrayList options) {
         this.options = options;
+    }
+
+    public boolean isChosen(String seasonChosen, int indexChosen){
+        return seasonChosen.equals(season) && indexChosen == index;
     }
 }

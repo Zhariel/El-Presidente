@@ -3,42 +3,42 @@
     "name": "sandbox",
       "factions": [
         {
-          "name": "capitalists",
+          "name": "capitalistes",
           "satisfaction": 50,
           "partisans": 15
         },
         {
-          "name": "communists",
+          "name": "communistes",
           "satisfaction": 50,
           "partisans": 15
         },
         {
-          "name": "liberals",
+          "name": "liberaux",
           "satisfaction": 50,
           "partisans": 15
         },
         {
-          "name": "religious",
+          "name": "religieux",
           "satisfaction": 50,
           "partisans": 15
         },
         {
-          "name": "militarists",
+          "name": "militaristes",
           "satisfaction": 50,
           "partisans": 15
         },
         {
-          "name": "ecologists",
+          "name": "ecologistes",
           "satisfaction": 50,
           "partisans": 15
         },
         {
-          "name": "nationalists",
+          "name": "nationalistes",
           "satisfaction": 50,
           "partisans": 15
         },
         {
-          "name": "loyalists",
+          "name": "loyalistes",
           "satisfaction": 100,
           "partisans": 15
         }

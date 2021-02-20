@@ -1,6 +1,7 @@
 package esgi;
 
 public class Resources {
+    private final Output out = new Output();
     private int treasury;
     private int food;
     private int industry;
@@ -44,31 +45,48 @@ public class Resources {
     public void setAgriculture(int agriculture) {
         this.agriculture = agriculture;
     }
-    public boolean limitedField(int industry, int agriculture) {
-    	if(industry + agriculture > 100)
-    		return false;
-    	return true;
+
+    public void addTreasury(int sum) {
+        treasury += sum;
     }
-    
+
+    public void deduceTreasury(int sum) {
+        treasury += sum * -1;
+    }
+
+    public void addFood(int sum) {
+        food += sum;
+    }
+
+    public void deduceFood(int sum) {
+        food += sum * -1;
+    }
+
+    public boolean canBuy(int sum) {
+        return treasury >= sum;
+    }
+
+    public boolean canBuild(int industry, int agriculture) {
+        return industry + agriculture <= 100;
+    }
+
     public void addIndustry(int value) {
-    	int newIndustry = getIndustry() + value;
-    	if(limitedField(newIndustry , getAgriculture())) {
-    		setIndustry(newIndustry);
-    	}
-    	else {
-    		System.out.println("Vous avez atteint la limite de place disponible pour créer des usines industrielles. ");  		
-    	}
+        int newIndustry = industry + value;
+        if(canBuild(newIndustry , agriculture)) {
+            setIndustry(newIndustry);
+        }
+        else {
+            out.industryFull();
+        }
     }
-   
+
     public void addAgriculture(int value) {
-    	int newAgriculture = getAgriculture() + value;
-    	if(limitedField(newAgriculture ,getIndustry())) {
-    		setIndustry(newAgriculture);
-    	}
-    	else {
-    		System.out.println("Vous avez atteint la limite de place disponible pour créer des champs agricoles. ");  
-    	}
+        int newAgriculture = agriculture + value;
+        if(canBuild(newAgriculture ,industry)) {
+            setIndustry(newAgriculture);
+        }
+        else {
+            out.agricultureFull();
+        }
     }
-    
-    
 }
