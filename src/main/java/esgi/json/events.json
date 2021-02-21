@@ -1,0 +1,920 @@
+[
+  {
+    "name": "automne",
+    "scenario": [
+      {
+        "narrative": "Un tremblement de terre fait rage!",
+        "choices": [
+          {
+            "decision": "Battre en retrait sur votre île personnelle au cas où.",
+            "consequence": "Vous vos retirez sur votre île, ce qui vous a valu de perdre beaucoup en popularité.",
+            "impact": {
+              "factions": [
+          {
+            "name": "loyalistes",
+            "effect": -15
+          },
+          {
+            "name": "liberaux",
+            "effect": 15
+          },
+          {
+            "name": "communistes",
+            "effect": -20
+          }
+          ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": -5
+          }},
+          {
+            "decision": "Subventionner les hôpitaux.",
+            "consequence": "Vous portez secours aux blessés.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": -20
+                },
+                {
+                  "name": "liberaux",
+                  "effect": 20
+                },
+                {
+                  "name": "ecologistes",
+                  "effect": 10
+                }
+              ],
+              "treasury": -1000,
+              "food": -100,
+              "industry": 0,
+              "agriculture": -5
+            }
+          },
+          {
+            "decision": "Faire la guerre avec une nation voisine pour échapper à vos problèmes.",
+            "consequence": "Vous faites la guerre avec vos ennemis et pillez leur capitale. Voila qui renflouera les caisses.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": 30
+                },
+                {
+                  "name": "religieux",
+                  "effect": 40
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -10
+                }
+              ],
+              "treasury": 4000,
+              "food": 200,
+              "industry": 15,
+              "agriculture": 10
+            }
+          },
+          {
+            "decision": "Ignorer l'incident.",
+            "consequence": "Vous continuez comme si de rien n'était. C'est meilleur pour le business.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": 10
+                },
+                {
+                  "name": "communistes",
+                  "effect": -15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": -15,
+              "agriculture": -15
+            }
+          }
+        ]
+      },
+      {
+        "narrative": "Vous êtes invités par le Président italien pour célébrer la fête de la pizza!",
+        "choices": [
+          {
+            "decision": "Y aller, mais emmener des agents des service secrets avec vous.",
+            "consequence": "Vous sentant méfiant, les italiens se rendent compte qu'il y a anguille sous roche.",
+            "impact": {
+              "factions":[
+                {
+                  "name": "religieux",
+                  "effect": 20
+                },
+                {
+                  "name": "militaristes",
+                  "effect": 5
+                }
+              ],
+              "treasury": 0,
+              "food": 100,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Y aller, et en profiter pour passer un excellent séjour.",
+            "consequence": "A votre retour, vous vous sentez parfaitement reposé.",
+            "impact": {
+              "factions":[
+                {
+                  "name": "liberaux",
+                  "effect": 10
+                },
+                {
+                  "name": "capitalistes",
+                  "effect": 10
+                }
+              ],
+              "treasury": 0,
+              "food": 200,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Inviter le Président italien à votre propre dîner, parce que c'est quand même meilleur ici.",
+            "consequence": "Le Président est outré.",
+            "impact": {
+              "factions":[
+                {
+                  "name": "nationalistes",
+                  "effect": 15
+                },
+                {
+                  "name": "loyalistes",
+                  "effect": 15
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -5
+                }
+              ],
+              "treasury": 0,
+              "food": 50,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Ne pas y aller et ignorer ses appels.",
+            "consequence": "Les nations voisines qui sont en guerre contre les Italiens sont empathiquent et vous envoient un cadeau.",
+            "impact": {
+              "factions":[
+                {
+                  "name": "loyalistes",
+                  "effect": 20
+                },
+                {
+                  "name": "capitalistes",
+                  "effect": 15
+                }
+              ],
+              "treasury": 1000,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "hiver",
+    "scenario": [
+      {
+        "narrative": "Un blizzard s'abat sur le pays et provoque des ruptures de courant.",
+        "choices": [
+          {
+            "decision": "Vous restez chez vous bien au chaud.",
+            "consequence": "Le peuple n'est pas satisfait, mais il fait trop froid pour manifester.",
+            "impact": {
+              "factions":[
+                {
+                  "name": "liberaux",
+                  "effect": -20
+                },
+                {
+                  "name": "loyalistes",
+                  "effect": 10
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous envoyez l'armée apporter du secours aux gens.",
+            "consequence": "Beaucoup de vies sont sauvées.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": 20
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -10
+                },
+                {
+                  "name": "communistes",
+                  "effect": 15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous coupez l'eau courante parce que les gens l'ont bien mérité.",
+            "consequence": "Ca leur apprendra.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "religieux",
+                  "effect": 20
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -10
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 10,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous allez prier à l'église pour que tout se rétablisse.",
+            "consequence": "Tout le monde trouve ça très brave.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "religieux",
+                  "effect": 30
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 20
+            }
+          }
+        ]
+      },
+      {
+        "narrative": "Une nation voisine a du mal à combattre une épidémie et vous propose d'acheter des produits médicaux à très haut prix.",
+        "choices": [
+          {
+            "decision": "Vous acceptez, et faites des profits.",
+            "consequence": "C'est bon pour le business.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": 20
+                },
+                {
+                  "name": "liberaux",
+                  "effect": 10
+                }
+              ],
+              "treasury": 1000,
+              "food": 0,
+              "industry": 15,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous acceptez, et investissez les bénéfices dans un nouveau manoir personnel.",
+            "consequence": "Le peuple n'est pas content, mais vous dormez sur vos deux oreilles.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "communistes",
+                  "effect": -15
+                },
+                {
+                  "name": "loyalistes",
+                  "effect": 15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous refusez, votre pays en a plus besoin.",
+            "consequence": "Vos voisins insistent, étant au bord de la crise. Vous décidez de leur vendre une petite partie de vos réserves à prix d'or.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "religieux",
+                  "effect": 15
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": -5
+                }
+              ],
+              "treasury": 2000,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous acceptez, mais vous demandez de puiser dans leurs réserves de pétrole en échange.",
+            "consequence": "C'est bon pour le business.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": 15
+                },
+                {
+                  "name": "militaristes",
+                  "effect": 10
+                }
+              ],
+              "treasury": 500,
+              "food": 0,
+              "industry": 15,
+              "agriculture": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "printemps",
+    "scenario": [
+      {
+        "narrative": "Un cyclone tropical s'abat sur le pays !",
+        "choices": [
+          {
+            "decision": "Tirer dans la tempête avec des armes à feu pour l'arrêter.",
+            "consequence": "La tempête est toujours là, et en plus vous perdez toutes vos munitions.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "militaristes",
+                  "effect": -20
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": -5,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Apporter des aides gens en détresse.",
+            "consequence": "C'est pas bon pour le business, mais le peuple est content.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "communistes",
+                  "effect": 30
+                },
+                {
+                  "name": "religieux",
+                  "effect": 20
+                }
+              ],
+              "treasury": -500,
+              "food": -50,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Apporter des aides aux réserves animalières et à l'environnement en danger.",
+            "consequence": "Les amis de la nature vous remercient.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "ecologistes",
+                  "effect": 40
+                },
+                {
+                  "name": "communistes",
+                  "effect": 20
+                }
+              ],
+              "treasury": -500,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Ne rien faire, et couper l'électriciter parce que les gens l'ont bien mérité.",
+            "consequence": "Les gens sont très en colère. Des manifestations se font entendre au pied de votre palais.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": 30
+                },
+                {
+                  "name": "religieux",
+                  "effect": -30
+                },
+                {
+                  "name": "communistes",
+                  "effect": -15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          }
+        ]
+      },
+      {
+        "narrative": "Une organisation vous propose une somme importante pour raser l'important forêt qui couvre le pays.",
+        "choices": [
+          {
+            "decision": "Accepter, et utiliser l'argent pour vous acheter un nouveau palais.",
+            "consequence": "Les manifestations font rage.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "ecologistes",
+                  "effect": -50
+                },
+                {
+                  "name": "capitalistes",
+                  "effect": 15
+                },
+                {
+                  "name": "loyalistes",
+                  "effect": 50
+                }
+              ],
+              "treasury": 3000,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Refuser, parce que la nature c'est fragile.",
+            "consequence": "Les gens sont content. On vous accorde le prix nobel de l'écologie.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "ecologistes",
+                  "effect": 50
+                },
+                {
+                  "name": "loyalistes",
+                  "effect": 20
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous envoyez le président de cette organisation en prison.",
+            "consequence": "Les gens sont content, mais cette démonstration d'autorité effraie.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "ecologistes",
+                  "effect": 50
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous acceptez, et vous utiliser l'argent pour accepter des cargaisons de munitions.",
+            "consequence": "Les gens sont mécontents, mais les manifestations sont plutôt calmes tout d'un coup.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "militaristes",
+                  "effect": 50
+                },
+                {
+                  "name": "ecologistes",
+                  "effect": 10
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "été",
+    "scenario": [
+      {
+        "narrative": "Une canicule s'abat sur le pays.",
+        "choices": [
+          {
+            "decision": "Couper l'éléctricité parce qu'ils l'ont bien mérité.",
+            "consequence": "Les gens sont mécontents, mais il fait trop chaud pour sortir manifester.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": 20
+                },
+                {
+                  "name": "communistes",
+                  "effect": -30
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous décider de rationner les réserves d'eau et de mettre en place un soutien aux personnes âgées.",
+            "consequence": "Le peuple est content, mais vos amis haut placés sont mécontents de ce gaspillage d'argent.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": -15
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": -15
+                }
+              ],
+              "treasury": -500,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 10
+            }
+          },
+          {
+            "decision": "Vous invitez tous vos amis haut placés à un barbecue chez vous.",
+            "consequence": "C'est bon pour le networking.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": 30
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": 40
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -20
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous incitez les gens à sortir dehors pour bronzer.",
+            "consequence": "C'est bon pour le teint, mais les gens sont en colère devant ce manque de directives.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": -20
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          }
+        ]
+      },
+      {
+        "narrative": "Avec la fonte des glaces, un gisement d'hydrocarbures est découvert dans une petite nation voisine.",
+        "choices": [
+          {
+            "decision": "Annexer cette nation et prendre le pétrole par la force.",
+            "consequence": "C'est bon pour le business, mais c'est mauvais pour les relations internationales.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "ecologistes",
+                  "effect": -30
+                },
+                {
+                  "name": "militaristes",
+                  "effect": 20
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -15
+                }
+              ],
+              "treasury": 2000,
+              "food": 0,
+              "industry": 20,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous décider de financer l'exploitation, en échange d'une partie des bénéfices.",
+            "consequence": "C'est bon pour le business.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": 20
+                },
+                {
+                  "name": "ecologistes",
+                  "effect": -15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 10,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous n'en faites rien, vous êtes pour les énergies renouvellables.",
+            "consequence": "Vous avez sauvé le climat.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "ecologistes",
+                  "effect": 50
+                },
+                {
+                  "name": "liberaux",
+                  "effect": -15
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 20
+            }
+          },
+          {
+            "decision": "Vous envoyez un espion pour saboter l'exploitation naissante du pétrole dans ce pays.",
+            "consequence": "Ca ne sert pas à grand chose, mais c'est drôle quand ça arrive aux autres.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": 10
+                },
+                {
+                  "name": "communistes",
+                  "effect": -10
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 10,
+              "agriculture": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "misc",
+    "scenario": [
+      {
+        "narrative": "Les hommes crabes vous déclarent la guerre!",
+        "choices": [
+          {
+            "decision": "Se soumettre aux hommes crabes.",
+            "consequence": "Vous vous soumettez aux hommes crabes.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "militaristes",
+                  "effect": -20
+                },
+                {
+                  "name": "ecologistes",
+                  "effect": 15
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": -10
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Déclarer la guerre aux hommes crabes.",
+            "consequence": "Vous attaquez les hommes crabes avec toute votre force de frappe. Ils sont repoussés!",
+            "impact": {
+              "factions": [
+                {
+                  "name": "militaristse",
+                  "effect": 15
+                },
+                {
+                  "name": "ecologistes",
+                  "effect": -10
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": 10
+                }
+              ],
+              "treasury": 0,
+              "food": 10,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Trouver un compromis et se serrer la pince.",
+            "consequence": "Les hommes crabes entendent vos arguments, mais n'acceptent de s'en aller que si vous les payez grassement.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": -10
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": 10
+                }
+              ],
+              "treasury": -200,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Tuer la délégation et essayer de savoir si les hommes crabes sont comestibles.",
+            "consequence": "Les hommes crabes sont intimidés par vos actions et abandonnent leurs ambitions de conquête.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "militaristes",
+                  "effect": 20
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": 15
+                },
+                {
+                  "name": "ecologistes",
+                  "effect": -20
+                }
+              ],
+              "treasury": 0,
+              "food": 100,
+              "industry": 0,
+              "agriculture": 0
+            }
+          }
+        ]
+      },
+      {
+        "narrative": "Votre pays fait une découverte médicale incroyable.",
+        "choices": [
+          {
+            "decision": "Donner gratuitement la technologie pour sauver des millions de vies.",
+            "consequence": "C'est pas bon pour le business, mais vous êtes très populaire.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "liberaux",
+                  "effect": 20
+                },
+                {
+                  "name": "religieux",
+                  "effect": 10
+                },
+                {
+                  "name": "capitalistes",
+                  "effect": -5
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous décidez de vendre la technologie à prix d'or.",
+            "consequence": "Voila qui renflouera les caisses de l'état.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "capitalistes",
+                  "effect": 15
+                },
+                {
+                  "name": "nationalistes",
+                  "effect": 30
+                }
+              ],
+              "treasury": 2000,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous décidez d'utiliser cette découverte pour vous rendre immortel. Ca ne peut que marcher.",
+            "consequence": "Vous n'êtes pas immortel, mais vous brillez dans le noir. C'est très impressionnant.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "loyalistes",
+                  "effect": 100
+                },
+                {
+                  "name": "religieux",
+                  "effect": 100
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          },
+          {
+            "decision": "Vous utilisez cette découverte pour faire du chantage à une petite nation voisine, très atteinte de maladie.",
+            "consequence": "C'est bon pour le business, et vous gagnez de l'influence sur la scène internationale.",
+            "impact": {
+              "factions": [
+                {
+                  "name": "nationalistes",
+                  "effect": 20
+                },
+                {
+                  "name": "communistes",
+                  "effect": 20
+                }
+              ],
+              "treasury": 0,
+              "food": 0,
+              "industry": 0,
+              "agriculture": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
