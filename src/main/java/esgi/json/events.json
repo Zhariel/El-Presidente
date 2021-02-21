@@ -72,8 +72,8 @@
               ],
               "treasury": 4000,
               "food": 200,
-              "industry": 10,
-              "agriculture": -5
+              "industry": 15,
+              "agriculture": 10
             }
           },
           {
@@ -92,8 +92,8 @@
               ],
               "treasury": 0,
               "food": 0,
-              "industry": 5,
-              "agriculture": -5
+              "industry": -15,
+              "agriculture": -15
             }
           }
         ]
@@ -217,7 +217,7 @@
           },
           {
             "decision": "Vous envoyez l'armée apporter du secours aux gens.",
-            "consequence": "",
+            "consequence": "Beaucoup de vies sont sauvées.",
             "impact": {
               "factions": [
                 {
@@ -241,7 +241,7 @@
           },
           {
             "decision": "Vous coupez l'eau courante parce que les gens l'ont bien mérité.",
-            "consequence": "",
+            "consequence": "Ca leur apprendra.",
             "impact": {
               "factions": [
                 {
@@ -255,7 +255,7 @@
               ],
               "treasury": 0,
               "food": 0,
-              "industry": 0,
+              "industry": 10,
               "agriculture": 0
             }
           },
@@ -272,7 +272,7 @@
               "treasury": 0,
               "food": 0,
               "industry": 0,
-              "agriculture": 0
+              "agriculture": 20
             }
           }
         ]
@@ -296,7 +296,7 @@
               ],
               "treasury": 1000,
               "food": 0,
-              "industry": 5,
+              "industry": 15,
               "agriculture": 0
             }
           },
@@ -550,7 +550,7 @@
         "narrative": "Une canicule s'abat sur le pays.",
         "choices": [
           {
-            "decision": "Couper l'électriciter parce qu'ils l'ont bien mérité.",
+            "decision": "Couper l'éléctricité parce qu'ils l'ont bien mérité.",
             "consequence": "Les gens sont mécontents, mais il fait trop chaud pour sortir manifester.",
             "impact": {
               "factions": [
@@ -586,7 +586,7 @@
               "treasury": -500,
               "food": 0,
               "industry": 0,
-              "agriculture": 0
+              "agriculture": 10
             }
           },
           {
@@ -639,7 +639,7 @@
         "narrative": "Avec la fonte des glaces, un gisement d'hydrocarbures est découvert dans une petite nation voisine.",
         "choices": [
           {
-            "decision": "Annexer cette nation et prendre le prétrole par la force.",
+            "decision": "Annexer cette nation et prendre le pétrole par la force.",
             "consequence": "C'est bon pour le business, mais c'est mauvais pour les relations internationales.",
             "impact": {
               "factions": [
@@ -699,7 +699,7 @@
               "treasury": 0,
               "food": 0,
               "industry": 0,
-              "agriculture": 0
+              "agriculture": 20
             }
           },
           {
@@ -718,7 +718,7 @@
               ],
               "treasury": 0,
               "food": 0,
-              "industry": 0,
+              "industry": 10,
               "agriculture": 0
             }
           }

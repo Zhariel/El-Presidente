@@ -7,12 +7,12 @@ public class Option {
     private String decision;
     private String consequence;
     private HashMap factionImpact;
-    private int foodImpact;
     private int treasuryImpact;
+    private int foodImpact;
     private int industryImpact;
     private int agricultureImpact;
 
-    public Option(String decision, String consequence, int foodImpact, int treasuryImpact, int industryImpact, int agricultureImpact) {
+    public Option(String decision, String consequence, int treasuryImpact, int foodImpact, int industryImpact, int agricultureImpact) {
         this.decision = decision;
         this.consequence = consequence;
         this.factionImpact = new HashMap();

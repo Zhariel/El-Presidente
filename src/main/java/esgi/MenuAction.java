@@ -36,7 +36,7 @@ public class MenuAction {
 
             } else if (input == 2) {
 
-                out.promptFoodAmount();
+                out.promptFoodAmount(resource.getTreasury());
                 int amount = sc.nextInt();
                 buyFoodAction(resource, amount);
 
@@ -53,18 +53,19 @@ public class MenuAction {
 
     public void bribeAction(String faction, Resources resource, ArrayList<Faction> factionsList) throws NoSuchElementException {
 
-        Faction factionToBribe = factionsList.stream()
+        Faction factionToBribe = factionsList
+                .stream()
                 .filter(f -> f.getName().equals(faction))
                 .findFirst()
                 .get();
 
         if (factionToBribe.bribe(resource) && !factionToBribe.getName().equals("loyalistes")) {
             factionsList
-                    .stream()
-                    .filter(f -> f.getName().equals("loyalistes"))
-                    .findFirst()
-                    .get()
-                    .deduceSatisfaction(factionToBribe.getPartisans() * 15 / 10);
+                .stream()
+                .filter(f -> f.getName().equals("loyalistes"))
+                .findFirst()
+                .get()
+                .deduceSatisfaction(factionToBribe.getPartisans() * 15 / 10);
         }
     }
 

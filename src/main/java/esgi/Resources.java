@@ -4,8 +4,8 @@ public class Resources {
     private final Output out = new Output();
     private int treasury;
     private int food;
-    private int industry;
-    private int agriculture;
+    private float industry;
+    private float agriculture;
 
     public Resources(int treasury, int food, int industry, int agriculture) {
         this.treasury = treasury;
@@ -30,7 +30,7 @@ public class Resources {
         this.food = food;
     }
 
-    public int getIndustry() {
+    public float getIndustry() {
         return industry;
     }
 
@@ -38,11 +38,11 @@ public class Resources {
         this.industry = industry;
     }
 
-    public int getAgriculture() {
+    public float getAgriculture() {
         return agriculture;
     }
 
-    public void setAgriculture(int agriculture) {
+    public void setAgriculture(float agriculture) {
         this.agriculture = agriculture;
     }
 
@@ -58,35 +58,43 @@ public class Resources {
         food += sum;
     }
 
-    public void deduceFood(int sum) {
-        food += sum * -1;
-    }
-
     public boolean canBuy(int sum) {
         return treasury >= sum;
     }
 
-    public boolean canBuild(int industry, int agriculture) {
+    public boolean canBuild(float industry, float agriculture) {
         return industry + agriculture <= 100;
     }
 
-    public void addIndustry(int value) {
-        int newIndustry = industry + value;
+    public void substractFood(int amount){
+        food -= amount;
+    }
+
+    public void addIndustry(int percentage) {
+        float newIndustry = industry + ((industry / 100) * percentage);
         if(canBuild(newIndustry , agriculture)) {
-            setIndustry(newIndustry);
+            industry = Math.min(100, newIndustry);
         }
         else {
             out.industryFull();
         }
     }
 
-    public void addAgriculture(int value) {
-        int newAgriculture = agriculture + value;
-        if(canBuild(newAgriculture ,industry)) {
-            setIndustry(newAgriculture);
+    public void addAgriculture(int percentage) {
+        float newAgriculture = agriculture + ((agriculture / 100) * percentage);
+        if(canBuild(industry, agriculture)) {
+            agriculture = Math.min(100, (int)newAgriculture);
         }
         else {
             out.agricultureFull();
         }
+    }
+
+    public void produceMoney(){
+        treasury += industry * 10;
+    }
+
+    public void produceFood(){
+        food += agriculture * 40;
     }
 }

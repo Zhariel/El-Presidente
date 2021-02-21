@@ -61,8 +61,8 @@ public class Output {
         System.out.println();
     }
 
-    public void promptFoodAmount() {
-        System.out.println("Entrez le nombre d'unités à acheter. 1 unité -> 8€");
+    public void promptFoodAmount(int money) {
+        System.out.println("Entrez le nombre d'unités à acheter. 1 unité -> 8€, max -> " + money/8);
     }
 
     public void promptFaction() {
@@ -169,4 +169,21 @@ public class Output {
         System.out.println("Agriculture : " + option.getAgricultureImpact());
         System.out.println();
     }
+
+    public void gameOver(int total, int needed){
+        System.out.println("_____________");
+        System.out.println("");
+        System.out.println("Approbation : " + total + " sur les " + needed + " nécessaires.");
+        System.out.println("");
+        System.out.println("Game Over");
+        System.out.println("");
+        System.out.println("Send any key to retry");
+        System.out.println("");
+        System.out.println("_____________");
+    }
+
+    public void approbation(int total){
+        System.out.println("Approbation : " + total);
+        System.out.println("");
+    };
 }

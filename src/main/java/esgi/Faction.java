@@ -1,5 +1,7 @@
 package esgi;
 
+import java.util.ArrayList;
+
 public class Faction {
     private String name;
     private int satisfaction;
@@ -37,8 +39,8 @@ public class Faction {
         this.partisans = partisans;
     }
 
-    public void zeroMultiplier(){
-
+    public int totalAppreciation(){
+        return satisfaction * partisans;
     }
 
     public void deduceSatisfaction(int amount) {
@@ -64,9 +66,18 @@ public class Faction {
 
     }
 
-    public void addSatisfaction(int amount){
-        int modifier = satisfaction == 0 ? 0 : 1;
-        int newSatisfaction = satisfaction + (satisfaction / amount);
-        satisfaction = Math.min(100, newSatisfaction) * modifier;
+    public void growth(int islandPop){
+        float newPartisans = (float)partisans + islandPop / 100 * (int)Math.random() * 10 + 1;
+        satisfaction = Math.min(100, (int)newPartisans);
+    }
+
+    public void kill(int percentage){
+        float newPartisans = (float)partisans - (float)partisans / 100 * percentage;
+        partisans = Math.max(0, (int)newPartisans);
+    }
+
+    public void addSatisfaction(int percentage){
+        float newSatisfaction = (float)satisfaction + (((float)satisfaction / 100) * percentage);
+        satisfaction = Math.min(100, (int)newSatisfaction);
     }
 }
