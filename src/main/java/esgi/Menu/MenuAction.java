@@ -39,7 +39,7 @@ public class MenuAction {
 
                 try {
                     bribeAction(faction, resource, factionsList);
-                } catch (NoSuchElementException e) {
+                } catch (Exception e) {
                     out.displayInvalid();
                 }
 
