@@ -10,24 +10,25 @@
             "consequence": "Vous vos retirez sur votre île, ce qui vous a valu de perdre beaucoup en popularité.",
             "impact": {
               "factions": [
-          {
-            "name": "loyalistes",
-            "effect": -15
-          },
-          {
-            "name": "liberaux",
-            "effect": 15
-          },
-          {
-            "name": "communistes",
-            "effect": -20
-          }
-          ],
+                {
+                  "name": "loyalistes",
+                  "effect": -15
+                },
+                {
+                  "name": "liberaux",
+                  "effect": 15
+                },
+                {
+                  "name": "communistes",
+                  "effect": -20
+                }
+              ],
               "treasury": 0,
               "food": 0,
               "industry": 0,
               "agriculture": -5
-          }},
+            }
+          },
           {
             "decision": "Subventionner les hôpitaux.",
             "consequence": "Vous portez secours aux blessés.",
@@ -105,7 +106,7 @@
             "decision": "Y aller, mais emmener des agents des service secrets avec vous.",
             "consequence": "Vous sentant méfiant, les italiens se rendent compte qu'il y a anguille sous roche.",
             "impact": {
-              "factions":[
+              "factions": [
                 {
                   "name": "religieux",
                   "effect": 20
@@ -125,7 +126,7 @@
             "decision": "Y aller, et en profiter pour passer un excellent séjour.",
             "consequence": "A votre retour, vous vous sentez parfaitement reposé.",
             "impact": {
-              "factions":[
+              "factions": [
                 {
                   "name": "liberaux",
                   "effect": 10
@@ -145,7 +146,7 @@
             "decision": "Inviter le Président italien à votre propre dîner, parce que c'est quand même meilleur ici.",
             "consequence": "Le Président est outré.",
             "impact": {
-              "factions":[
+              "factions": [
                 {
                   "name": "nationalistes",
                   "effect": 15
@@ -169,7 +170,7 @@
             "decision": "Ne pas y aller et ignorer ses appels.",
             "consequence": "Les nations voisines qui sont en guerre contre les Italiens sont empathiquent et vous envoient un cadeau.",
             "impact": {
-              "factions":[
+              "factions": [
                 {
                   "name": "loyalistes",
                   "effect": 20
@@ -199,7 +200,7 @@
             "decision": "Vous restez chez vous bien au chaud.",
             "consequence": "Le peuple n'est pas satisfait, mais il fait trop froid pour manifester.",
             "impact": {
-              "factions":[
+              "factions": [
                 {
                   "name": "liberaux",
                   "effect": -20

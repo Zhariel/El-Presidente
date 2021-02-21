@@ -19,6 +19,13 @@ public class MenuAction {
     }
 
 
+    /**
+     * called when the turn has to end
+     * gets input from the user
+     * lets the user bribe a faction, buy food on the market, or end the turn
+     * @param resource
+     * @param factionsList
+     */
     public void endTurn(Resources resource, ArrayList<Faction> factionsList) {
         out.suggestChoices();
 
@@ -52,25 +59,44 @@ public class MenuAction {
         }
     }
 
-
-    public void bribeAction(String faction, Resources resource, ArrayList<Faction> factionsList) throws NoSuchElementException {
-
-        Faction factionToBribe = factionsList
+    /**
+     * finds the faction to bribe accoring to the string
+     * @param faction
+     * @param factionsList
+     * @return
+     */
+    public Faction findFactionToBribe(String faction, ArrayList<Faction> factionsList){
+        return factionsList
                 .stream()
                 .filter(f -> f.getName().equals(faction))
                 .findFirst()
                 .get();
+    }
 
-        if (factionToBribe.bribe(resource) && !factionToBribe.getName().equals("loyalistes")) {
-            factionsList
-                .stream()
-                .filter(f -> f.getName().equals("loyalistes"))
-                .findFirst()
-                .get()
+    /**
+     * bribes the faction
+     * and if they are not the loyalists,
+     * deduce satisfaction from the loyalists.
+     * @param faction
+     * @param resource
+     * @param factionsList
+     * @throws NoSuchElementException
+     */
+    public void bribeAction(String faction, Resources resource, ArrayList<Faction> factionsList) throws NoSuchElementException {
+
+        Faction factionToBribe = findFactionToBribe(faction, factionsList);
+
+        if (factionToBribe.bribe(resource) && !factionToBribe.isFaction("loyalistes")) {
+            findFactionToBribe("loyalistes", factionsList)
                 .deduceSatisfaction(factionToBribe.getPartisans() * 15 / 10);
         }
     }
 
+    /**
+     * if there is the money, buys food, else does nothing
+     * @param resource
+     * @param amount
+     */
     public void buyFoodAction(Resources resource, int amount) {
         int totalCost = amount * Market.cost;
 
@@ -81,6 +107,5 @@ public class MenuAction {
         } else {
             out.cannotBuyFood();
         }
-
     }
 }

@@ -47,7 +47,7 @@ public class Event {
         this.options = options;
     }
 
-    public boolean isChosen(String seasonChosen, int indexChosen){
+    public boolean isChosen(String seasonChosen, int indexChosen) {
         return seasonChosen.equals(season) && indexChosen == index;
     }
 }

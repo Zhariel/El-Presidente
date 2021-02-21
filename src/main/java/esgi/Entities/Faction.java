@@ -49,7 +49,11 @@ public class Faction {
         out.displaySatisfaction(name, satisfaction);
     }
 
-
+    /**
+     * Permet de soudoyer une faction et déduit le montant des ressources
+     * @param resource
+     * @return
+     */
     public boolean bribe(Resources resource) {
         int totalCash = 15 * partisans;
 
@@ -59,12 +63,12 @@ public class Faction {
 
         } else {
             addSatisfaction(10);
+            resource.deduceTreasury(totalCash);
             out.bribeSucceeded(partisans, totalCash);
             out.displaySatisfaction(name, satisfaction);
 
             return true;
         }
-
     }
 
     public void growth(int islandPop){
@@ -80,5 +84,9 @@ public class Faction {
     public void addSatisfaction(int percentage){
         float newSatisfaction = (float)satisfaction + (((float)satisfaction / 100) * percentage);
         satisfaction = Math.min(100, (int)newSatisfaction);
+    }
+
+    public boolean isFaction(String factionToCheck){
+        return name.equals(factionToCheck);
     }
 }

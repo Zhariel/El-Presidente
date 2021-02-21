@@ -69,7 +69,7 @@ public class Resources {
     }
 
     public void substractFood(int amount){
-        food -= amount;
+        food -= Math.min(0, amount);
     }
 
     public void addIndustry(int percentage) {

@@ -5,10 +5,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
+
 import esgi.Display.Output;
 import esgi.Init.GameInitializer;
 import esgi.Entities.*;
 import esgi.Menu.*;
+
+/**
+ * GameManager is a singleton class
+ * As long as there is a GameManager object, the game is going
+ * Where the game is over, we refresh the object and start the loop
+ */
 
 public class GameManager {
 
@@ -43,81 +50,135 @@ public class GameManager {
         GameManager.seasonCount = seasonCount;
     }
 
+    /**
+     * updates the season string based on season count
+     */
     public void updateSeason() {
         season = seasonCount % 4 == 0 ? "automne" :
                 (seasonCount % 4 == 1 ? "hiver" : (seasonCount % 4 == 2 ? "printemps" : "été"));
     }
 
-    public void produceResources(Resources resources){
-        if(season.equals("automne") && seasonCount != 0){
+    /**
+     * produces resources
+     * @param resources
+     */
+    public void produceResources(Resources resources) {
+        if(!season.equals("automne") || seasonCount == 0) return;
             resources.produceFood();
             resources.produceMoney();
-        }
     }
 
-    public int partisanSum(ArrayList<Faction> factions){
+    /**
+     * how many partisans there are on the island
+     * @param factions
+     * @return
+     */
+    public int partisanSum(ArrayList<Faction> factions) {
         return factions.stream()
                 .mapToInt(Faction::getPartisans)
                 .sum();
     }
 
+    /**
+     * total appreciation over the entire island
+     * @param factions
+     * @return
+     */
     public int islandAppreciation(ArrayList<Faction> factions) {
+        if (partisanSum(factions) == 0 ) return 0;
+
         return factions.stream()
-            .mapToInt(Faction::totalAppreciation)
-            .sum()
-            / partisanSum(factions);
+                .mapToInt(Faction::totalAppreciation)
+                .sum()
+                / partisanSum(factions);
     }
 
-    public void managePartisans(ArrayList<Faction> factions, int totalFood, Resources resources){
-        if(seasonCount == 0 || seasonCount%4 != 0) return;
-        int foodFromAgriculture = (int)resources.getAgriculture() * 40;
+    /**
+     * If it's autumn and not the 1st year,
+     * we check the amount of food and kill or reproduce partisans accordingly.
+     * @param factions
+     * @param totalFood
+     * @param resources
+     */
+    public void managePartisans(ArrayList<Faction> factions, int totalFood, Resources resources) {
+        if (seasonCount == 0 || seasonCount % 4 != 0) return;
+        int foodFromAgriculture = (int) resources.getAgriculture() * 40;
 
         int sum = partisanSum(factions);
 
-        if(totalFood < sum*4){
+        if (totalFood < sum * 4) {
             eliminatePartisans(factions, totalFood);
             return;
-        }
-        else if(foodFromAgriculture > sum*4){
+        } else if (foodFromAgriculture > sum * 4) {
             reproducePartisans(factions);
         }
-        resources.substractFood(sum*4);
+        resources.substractFood(sum * 4);
     }
 
-    public void eliminatePartisans(ArrayList<Faction> factions, int totalFood){
+    /**
+     * kills a small amount of partisans until there is enough food for everyone
+     * @param factions
+     * @param totalFood
+     */
+    public void eliminatePartisans(ArrayList<Faction> factions, int totalFood) {
         Random rand = new Random();
         int sum;
-        do{
+        do {
             sum = partisanSum(factions);
-            int idx = rand.nextInt(9);
+            int idx = rand.nextInt(8);
             factions.get(idx).kill(10);
 
-        }while(totalFood < sum);
+        } while (totalFood < sum);
+
+        isGameOver(factions);
     }
 
-    public void reproducePartisans(ArrayList<Faction> factions){
+    /**
+     * Iterates over the factions and randomly reproduces partisans
+     * @param factions
+     */
+    public void reproducePartisans(ArrayList<Faction> factions) {
         factions.forEach(f -> f.growth(partisanSum(factions)));
     }
 
-    public void gameOver(ArrayList<Faction> factions){
+    /**
+     * checks if the game is over by summing the overall approval
+     * @param factions
+     */
+    public void isGameOver(ArrayList<Faction> factions){
         int islandApproval = islandAppreciation(factions);
         int treshold = 30;
 
-        if(islandApproval < treshold){
-            out.gameOver(islandApproval, treshold);
-            Scanner sc = new Scanner(System.in);
-            sc.next();
-
-            instance = null;
-            GameManager game = GameManager.getInstance();
-            try {
-                game.run();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if (islandApproval < treshold) {
+            gameOver(islandApproval, treshold);
         }
     }
 
+    /**
+     * throws a game over and gives you the opportunity to restart the game
+     * @param islandApproval
+     * @param treshold
+     */
+    public void gameOver(int islandApproval, int treshold) {
+        out.gameOver(islandApproval, treshold);
+        Scanner sc = new Scanner(System.in);
+        sc.next();
+
+        instance = null;
+        GameManager game = GameManager.getInstance();
+        try {
+            game.run();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Builds all the game objects
+     * Loops infinitely until you either close the program or
+     * lose, in which case a new GameManager is generated
+     * @throws IOException
+     */
     public void run() throws IOException {
         System.out.println();
         updateSeason();
@@ -136,22 +197,22 @@ public class GameManager {
 
         //Game loop
         while (true) {
+            produceResources(resource);
             managePartisans(factions, resource.getFood(), resource);
             out.describeGameState(resource, factions, season, seasonMap, seasonCount);
             out.approbation(islandAppreciation(factions));
 
             int chosenEvent = events.diceRoll(season);
-            if(events.applyChoice(chosenEvent, season, eventList, resource, factions)) {
+            if (events.applyChoice(chosenEvent, season, eventList, resource, factions)) {
                 out.describeGameState(resource, factions, season, seasonMap, seasonCount);
             }
 
             menu.endTurn(resource, factions);
 
-            produceResources(resource);
             managePartisans(factions, resource.getFood(), resource);
             seasonCount++;
             updateSeason();
-            gameOver(factions);
+            isGameOver(factions);
         }
     }
 }

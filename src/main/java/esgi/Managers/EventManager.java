@@ -18,8 +18,15 @@ public class EventManager {
     private final Output out = new Output();
     private final Scanner scanner = new Scanner(System.in);
 
-    public EventManager() {}
+    public EventManager() {
+    }
 
+    /**
+     * decides if there will be an event and which one
+     * -1 is returned if a non-event is rolled
+     * @param season
+     * @return
+     */
     public int diceRoll(String season) {
         Random rand = new Random();
         int eventRate = 2;
@@ -34,6 +41,13 @@ public class EventManager {
         return -1;
     }
 
+    /**
+     * loads a single ObjectNode event in memory in prep to make an Event Object
+     * @param season
+     * @param choiceIndex
+     * @return
+     * @throws IOException
+     */
     public ObjectNode ExtractEventNode(String season, int choiceIndex) throws IOException {
         ArrayNode seasonArray = (ArrayNode) mapper.readTree(file);
 
@@ -51,6 +65,13 @@ public class EventManager {
         return (ObjectNode) seasonArray.get(index).get("scenario").get(choiceIndex);
     }
 
+    /**
+     * loads a single event in memory
+     * @param season
+     * @param choiceIndex
+     * @return
+     * @throws IOException
+     */
     public Event initEvent(String season, int choiceIndex) throws IOException {
 
         ObjectNode eventNode = ExtractEventNode(season, choiceIndex);
@@ -85,7 +106,13 @@ public class EventManager {
         );
     }
 
-    public ArrayList<Event> populateEventList(HashMap<String, String> seasonMap)throws IOException{
+    /**
+     * loads all events in memory
+     * @param seasonMap
+     * @return
+     * @throws IOException
+     */
+    public ArrayList<Event> populateEventList(HashMap<String, String> seasonMap) throws IOException {
         ArrayList<Event> seasonList = new ArrayList<Event>();
 
         seasonMap.forEach((k, v) -> {
@@ -100,17 +127,35 @@ public class EventManager {
         return seasonList;
     }
 
-    public boolean isAcceptableInput(int solution){
+    /**
+     * used to determine if the selected choice is valid
+     * @param solution
+     * @return
+     */
+    public boolean isAcceptableInput(int solution) {
         return solution > 0 && solution < 5;
     }
 
-    public Event findSelectedEvent(ArrayList<Event> eventList, String season, int index){
+    /**
+     * finds selected event according to the season and the event index
+     * @param eventList
+     * @param season
+     * @param index
+     * @return
+     */
+    public Event findSelectedEvent(ArrayList<Event> eventList, String season, int index) {
         return eventList.stream()
                 .filter(e -> e.isChosen(season, index))
                 .findFirst()
                 .get();
     }
 
+    /**
+     * Prompts user to make a choice and receives it
+     * Returns the associated option object
+     * @param event
+     * @return
+     */
     public Option inputChoiceChosen(Event event) {
 
         //out.debugEvent(event, false);
@@ -118,28 +163,35 @@ public class EventManager {
 
         String solution = "";
         int chosen;
-        while(true){
+        while (true) {
             solution = scanner.next();
-            try{
+            try {
                 chosen = Integer.parseInt(solution);
-            }
-            catch(NumberFormatException e){
+            } catch (NumberFormatException e) {
                 out.displayNotaNumber();
                 continue;
             }
 
-            if(!isAcceptableInput(chosen)){
+            if (!isAcceptableInput(chosen)) {
                 out.wrongChoiceIndex();
-            }
-            else break;
+            } else break;
         }
 
-        return (Option) event.options.get(chosen-1);
+        return (Option) event.options.get(chosen - 1);
     }
 
 
-    public boolean applyChoice(int choiceIndex, String season, ArrayList<Event> eventList, Resources resources, ArrayList<Faction> factions){
-        if(choiceIndex == -1) return false;
+    /**
+     * Applies the stat changes from the chosen event choice
+     * @param choiceIndex
+     * @param season
+     * @param eventList
+     * @param resources
+     * @param factions
+     * @return
+     */
+    public boolean applyChoice(int choiceIndex, String season, ArrayList<Event> eventList, Resources resources, ArrayList<Faction> factions) {
+        if (choiceIndex == -1) return false;
 
         Event event = findSelectedEvent(eventList, season, choiceIndex);
         Option option = inputChoiceChosen(event);
@@ -148,7 +200,7 @@ public class EventManager {
         out.displayChoiceConsequence(option);
         out.displayNewResources(resources, option);
 
-        option.getFactionImpact().forEach((k, v) -> applyFactionStatChange(factions, (String)k, (Integer)v));
+        option.getFactionImpact().forEach((k, v) -> applyFactionStatChange(factions, (String) k, (Integer) v));
 
 
         resources.addTreasury(option.getTreasuryImpact());
@@ -159,7 +211,14 @@ public class EventManager {
         return true;
     }
 
-    public void applyFactionStatChange(ArrayList<Faction> factions, String faction, int value){
+    /**
+     * Iterates over every faction and applies a satisfaction change
+     * if the faction name matches the given string
+     * @param factions
+     * @param faction
+     * @param value
+     */
+    public void applyFactionStatChange(ArrayList<Faction> factions, String faction, int value) {
         factions.stream()
                 .filter(f -> f.getName().equals(faction))
                 .forEach(f -> f.addSatisfaction(value));
