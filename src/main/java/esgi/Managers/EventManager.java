@@ -117,8 +117,8 @@ public class EventManager {
 
         seasonMap.forEach((k, v) -> {
             try {
-                seasonList.add(initEvent(k.toString(), 0));
-                seasonList.add(initEvent(k.toString(), 1));
+                seasonList.add(initEvent(k, 0));
+                seasonList.add(initEvent(k, 1));
             } catch (IOException e) {
                 e.printStackTrace();
             }

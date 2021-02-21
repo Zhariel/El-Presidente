@@ -75,7 +75,7 @@ public class GameInitializer {
      * @throws IOException
      */
     public ArrayList<Faction> initFactions() throws IOException {
-        ArrayList<Faction> factions = new ArrayList();
+        ArrayList<Faction> factions = new ArrayList<Faction>();
 
         ObjectNode configNode = extractConfigObject();
 
